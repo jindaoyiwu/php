@@ -12,7 +12,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
-    $router->resource('quarterly-declarations', EquipmentController::class);
+    $router->get('quarterly-declarations', 'EquipmentController@index');
 
 });
 

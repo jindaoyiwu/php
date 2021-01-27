@@ -2,48 +2,79 @@
 
 namespace App\Admin\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Model\QuarterlyDeclaration;
-use Encore\Admin\Controllers\AdminController;
+use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
+use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Illuminate\Http\Request;
 
-class EquipmentController extends AdminController
+class EquipmentController extends Controller
 {
-    /**
-     * Title for current resource.
-     *
-     * @var string
-     */
-    protected $title = 'QuarterlyDeclaration';
+    const PAGE_SIZE = 20;
+    const PAGE_DEFAULT = 1;
 
-    /**
-     * Make a grid builder.
-     *
-     * @return Grid
-     */
-    protected function grid()
+    public function index(Request $request, Content $content)
     {
-        $grid = new Grid(new QuarterlyDeclaration());
+        $request = $request->all();
 
-        $grid->column('id', __('Id'));
-        $grid->column('region', __('地区'));
-        $grid->column('company', __('公司名称'));
-        $grid->column('cellphone', __('电话'));
-        $grid->column('id_number', __('身份证号'));
-        $grid->column('duty_paragraph', __('税号'));
-        $grid->column('duty_password', __('密码'));
-        $grid->column('remark', __('备注'));
-        $grid->column('value_added_tax', __('增值税/附加税'));
-        $grid->column('corporate_income_tax', __('企业所得税'));
-        $grid->column('cultural_construction_tax', __('文化建设税'));
-        $grid->column('stamp_duty', __('印花税'));
-        $grid->column('labour_union', __('工会'));
-        $grid->column('statements', __('财务报表'));
-        $grid->column('annual_report', __('年报'));
-        $grid->column('duty_quarter', __('季度'));
+        return $content
+            ->header('季度申报管理')
+            ->breadcrumb(
+                ['text' => '季度申报列表', 'url' => '/quarterly-declarations']
+            )
+            ->body(self::listAction($request));
+    }
 
-        return $grid;
+    public function listAction($request = [])
+    {
+        $model = (new QuarterlyDeclaration())->getList($request);
+        $listGrid = Admin::grid($model->getModel(), function (Grid $grid) {
+            $grid->disableExport();
+            $grid->disableRowSelector();
+            $grid->expandFilter();
+
+            $grid->filter(function (Grid\Filter $filter) {
+                $filter->column(1 / 3, function ($filter) {
+                    $filter->equal('region', '法人')->placeholder('法人');
+                    $filter->equal('cellphone', '手机')->placeholder('手机号');
+                });
+                $filter->column(1 / 3, function ($filter) {
+                    $filter->equal('company', '公司名称')->placeholder('公司名称');
+                    $filter->equal('remark', '备注')->placeholder('备注');
+                });
+                $filter->column(1 / 3, function ($filter) {
+                    $filter->equal('year', '年份')->select(QuarterlyDeclaration::YEAR);
+                    $filter->equal('duty_quarter', '季度')->select(QuarterlyDeclaration::DUTY_QUARTER);
+                });
+            });
+            $grid->column('id')->sort();
+            $grid->column('region', '法人')->width(100)->editable();
+            $grid->column('company', '公司名称')->width(200)->editable();
+            $grid->column('cellphone', '手机')->width(100)->editable();
+            $grid->column('id_number', '身份证号')->width(200)->editable();
+            $grid->column('duty_paragraph', '税号')->width(200)->editable();
+            $grid->column('duty_password', '密码')->width(100)->editable();
+            $grid->column('remark', '备注')->width(100)->editable();
+            $grid->column('value_added_tax', '增值附加税')->width(100)->editable();
+            $grid->column('corporate_income_tax', '企业所得税')->width(100)->editable();
+            $grid->column('cultural_construction_tax', '文化建设税')->width(100)->editable();
+            $grid->column('stamp_duty', '印花税')->width(100)->editable();
+            $grid->column('labour_union', '工会')->width(50)->editable();
+            $grid->column('statements', '财务报表')->width(100)->editable();
+            $grid->column('annual_report', '年报')->width(50)->editable();
+            $grid->column('year', '年份')->editable('select', QuarterlyDeclaration::YEAR)->replace(QuarterlyDeclaration::YEAR)->width(50);
+            $grid->column('duty_quarter', '季度')->editable('select', QuarterlyDeclaration::DUTY_QUARTER)->replace(QuarterlyDeclaration::DUTY_QUARTER)->width(50);
+
+            $grid->actions(function (Grid\Displayers\Actions $actions) {
+                $actions->disableView();
+            });
+
+        });
+
+        return $listGrid->render();
     }
 
     /**
