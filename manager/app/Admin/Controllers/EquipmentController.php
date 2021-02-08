@@ -4,18 +4,19 @@ namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\QuarterlyDeclaration;
+use Doraemon\model\ForbiddenWord\ForbiddenAntiSpam;
+use Doraemon\model\ForbiddenWord\ForbiddenWord;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Encore\Admin\Widgets\Tab;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 
 class EquipmentController extends Controller
 {
-    const PAGE_SIZE = 20;
-    const PAGE_DEFAULT = 1;
-
     public function index(Request $request, Content $content)
     {
         $request = $request->all();
@@ -37,6 +38,7 @@ class EquipmentController extends Controller
             $grid->expandFilter();
 
             $grid->filter(function (Grid\Filter $filter) {
+                $filter->disableIdFilter();
                 $filter->column(1 / 3, function ($filter) {
                     $filter->equal('region', '法人')->placeholder('法人');
                     $filter->equal('cellphone', '手机')->placeholder('手机号');
@@ -138,4 +140,93 @@ class EquipmentController extends Controller
 
         return $form;
     }
+
+
+    public function edit(Content $content, $id = 0)
+    {
+        $tab = new Tab();
+        if ($id > 0) {
+            $title = '编辑季度申报';
+        } else {
+            $title = '添加季度申报';
+        }
+        $tab->add("$title", $this->editAction($id));
+        return $content
+            ->header('季度申报管理')
+            ->breadcrumb(
+                [
+                    'text' => '季度申报列表',
+                    'url' => '/quarterly-declarations'
+                ],
+                ['text' => "$title"]
+            )
+            ->body($tab);
+    }
+
+    private function editAction($id)
+    {
+        $data = [];
+        if ($id > 0) {
+            $data = (new QuarterlyDeclaration)->where(['id' => $id, 'is_deleted' => 1])->get();
+        }
+        $form = new Form($data);
+        $form->hidden('id', 'id');
+        $form->hidden('auti_spam_id', 'auti_spam_id');
+        $form->text('forbidden_word', '禁用词类型')->disable();
+        $form->textarea('word', '禁用词')->help('批量添加以/分隔')->required('禁用词必填');
+        $form->action('/admin/forbiddenWord/word/index/save');
+
+        return $form;
+    }
+
+    //话题保存
+    public function save(Request $request)
+    {
+        $request = $request->all();
+        unset($request['_token']);
+        if (strpos($request['word'], '/') !== false) {
+            $words = explode('/', $request['word']);
+            foreach ($words as $item) {
+                if (empty($item)) {
+                    continue;
+                }
+                $insertData[] = ['auti_spam_id' => $request['auti_spam_id'], 'word' => $item];
+            }
+        } else {
+            $words = $request['word'];
+            $insertData['auti_spam_id'] = $request['auti_spam_id'];
+            $insertData['word'] = $request['word'];
+        }
+        $one = ForbiddenWord::get('*', ['word' => $words, 'state' => ForbiddenAntiSpam::STATE_SUCCESS]);
+        if ($one != null) {
+            $error = new MessageBag([
+                'title' => $one['word'] . '禁用词已经存在'
+            ]);
+            return back()->with(compact('error'));
+        }
+        $num = 0;
+        if (isset($request['id']) && $request['id']) {
+            //修改
+            $result = ForbiddenWord::update($request, ['id' => $request['id']]);
+            $num = $result->rowCount();
+        } else if (!empty($insertData)) {
+            unset($request['id']);
+            //添加
+            $result = ForbiddenWord::insert($insertData);
+        }
+
+        if ($num > 0 || $result) {
+            $success = new MessageBag([
+                'title' => '保存成功'
+            ]);
+            return redirect('/admin/forbiddenWord/word/index/' . $request['auti_spam_id'])->with(compact('success'));
+
+        } else {
+            $error = new MessageBag([
+                'title' => '保存失败'
+            ]);
+            return back()->with(compact('error'));
+        }
+    }
+
 }

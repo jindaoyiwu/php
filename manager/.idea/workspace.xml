@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22d0e5bb-2fe3-4103-990e-82f30348cf0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.phar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/manager.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/EquipmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/EquipmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/QuarterlyDeclaration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/QuarterlyDeclaration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog/money.sql" beforeDir="false" afterPath="$PROJECT_DIR$/changelog/money.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +123,17 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/php-webdriver/webdriver" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mPPpInCK2i8UTgnhMl20a4Yk4G" />
@@ -134,14 +149,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Model" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Model" />
+      <recent name="$PROJECT_DIR$/Modules" />
+      <recent name="$PROJECT_DIR$/changelog" />
+      <recent name="$PROJECT_DIR$/app/Providers" />
+      <recent name="$PROJECT_DIR$/app/Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -164,7 +185,11 @@
       <workItem from="1609813289082" duration="1814000" />
       <workItem from="1611713850008" duration="4721000" />
       <workItem from="1611718710951" duration="4228000" />
-      <workItem from="1611743415587" duration="991000" />
+      <workItem from="1611743415587" duration="2857000" />
+      <workItem from="1611886480193" duration="1164000" />
+      <workItem from="1612427815659" duration="3036000" />
+      <workItem from="1612511309318" duration="1469000" />
+      <workItem from="1612665708633" duration="15141000" />
     </task>
     <servers />
   </component>
@@ -176,17 +201,25 @@
       <screen x="0" y="23" width="1920" height="1016" />
     </state>
     <state x="617" y="58" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1609393842046" />
-    <state x="698" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611718516137">
+    <state x="698" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611800530856">
       <screen x="0" y="23" width="1920" height="1016" />
     </state>
-    <state x="698" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1611718516137" />
-    <state x="704" y="364" key="NewPhpClassDialog" timestamp="1611716172607">
+    <state x="698" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1611800530856" />
+    <state x="704" y="364" key="NewPhpClassDialog" timestamp="1612768245204">
       <screen x="0" y="23" width="1920" height="1016" />
     </state>
-    <state x="704" y="364" key="NewPhpClassDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1611716172607" />
-    <state x="625" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1609396887324">
+    <state x="704" y="364" key="NewPhpClassDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1612768245204" />
+    <state x="646" y="303" width="628" height="456" key="find.popup" timestamp="1612693353672">
       <screen x="0" y="23" width="1920" height="1016" />
     </state>
-    <state x="625" y="248" width="670" height="676" key="search.everywhere.popup/0.23.1920.1016@0.23.1920.1016" timestamp="1609396887324" />
+    <state x="646" y="303" width="628" height="456" key="find.popup/0.23.1920.1016@0.23.1920.1016" timestamp="1612693353672" />
+    <state x="691" y="172" key="refactoring.ChangeSignatureDialog" timestamp="1612690588905">
+      <screen x="0" y="23" width="1920" height="1016" />
+    </state>
+    <state x="691" y="172" key="refactoring.ChangeSignatureDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1612690588905" />
+    <state x="625" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1612764599315">
+      <screen x="0" y="23" width="1920" height="1016" />
+    </state>
+    <state x="625" y="248" width="670" height="676" key="search.everywhere.popup/0.23.1920.1016@0.23.1920.1016" timestamp="1612764599315" />
   </component>
 </project>
