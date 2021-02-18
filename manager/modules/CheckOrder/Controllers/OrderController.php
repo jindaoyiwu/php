@@ -91,13 +91,14 @@ class OrderController extends Controller
             $grid->column('order_id', '订单ID')->width(200);
             $grid->column('amount_payable', '应付金额')->width(200);
             $grid->column('state', '状态')->width(200);
-            $grid->column('plat', '订单平台')->width(200);
+            $grid->column('plat', '订单平台')->replace(['1'=>'京东'])->width(100);
             $grid->column('pay_time', '支付时间')->width(300);
-            $grid->actions(function (Grid\Displayers\Actions $actions) {
-                $actions->disableView();
-                $actions->disableEdit();
-                $actions->prepend('<a href="/admin/forbiddenWord/index/' . $actions->row->id . '/edit?word_type=' . $actions->row->forbidden_word . '" class="grid-row-edit"><i class="fa fa-edit"></i></a>');
-            });
+            $grid->column('order_time', '下单时间')->width(300);
+//            $grid->actions(function (Grid\Displayers\Actions $actions) {
+//                $actions->disableView();
+//                $actions->disableEdit();
+//                $actions->prepend('<a href="/admin/forbiddenWord/index/' . $actions->row->id . '/edit?word_type=' . $actions->row->forbidden_word . '" class="grid-row-edit"><i class="fa fa-edit"></i></a>');
+//            });
 
         });
 

@@ -1,11 +1,16 @@
 <?php
+
 namespace Modules\CheckOrder\Actions;
 
 
+use App\Helper\Logger;
+use App\Jobs\WangjiaduImportExcel;
+use App\Model\MeizhouOrder;
+use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
 use Encore\Admin\Actions\Action;
 use Illuminate\Http\Request;
-use PhpOffice\PhpSpreadsheet\IOFactory;
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use Illuminate\Support\Facades\Storage;
+
 
 class Import extends Action
 {
@@ -13,24 +18,48 @@ class Import extends Action
 
     public function handle(Request $request)
     {
-        set_time_limit(180);
-        ini_set('memory_limit', '500M');
+//        if ($request->hasFile('file') && $request->file('file')->isValid()) {
+//            $file = $request->file('file');
+//            $allowed_extensions = ['xlsx','pdf'];
+//            if (!in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
+//                dd('只能上传xlsx格式的图片.');
+//            } else {
+//                $destinationPath = storage_path() . '/app/upload/'; //public 文件夹下面建 storage/uploads 文件夹
+//                $extension = $file->getClientOriginalExtension();
+//                $fileName = md5(time() . rand(1, 1000)) . '.' . $extension;
+//                $file->move($destinationPath, $fileName);
+//                dd("文件路径：" . asset($destinationPath . $fileName));
+//            }
+//        } else {
+//            dd('图片上传失败请重试.');
+//        }
 
-        $file_size = $_FILES['file']['size'];
-        if ($file_size > 100 * 1024 * 1024) {
-            throw new \Exception('文件大小不能超过100M');
+        $fileCharater = $request->file('file');
+        if ($fileCharater->isValid()) { //括号里面的是必须加的哦
+            //获取文件的绝对路径
+            $path = $fileCharater->getRealPath();
+            //定义文件名
+            $filename = date('YmdHis') . $_FILES['file']['name'];
+            //存储文件。disk里面的public。总的来说，就是调用disk模块里的public配置
+            dd(Storage::disk('local')->put($filename, file_get_contents($path)));
+            $absPath = storage_path() . '/app/upload/' . $filename;
+            dispatch(new WangjiaduImportExcel(['path' => $absPath]));
         }
 
-        $suffix = substr(strrchr($_FILES['file']["name"], '.'), 1);
-        if ($suffix != 'xlsx') {
-            throw new \Exception('必须为excel表格，且必须为xlsx格式！');
-        }
-        $fileName = $_FILES['file']['tmp_name'];
-        if (strpos($_FILES['file']['name'], '京东') !== false){
-            $this->jdImport($fileName);
-
-        }
-        return $this->response()->success('导入完成！')->refresh();
+//        if ($request->hasFile('file') && $request->file('file')->isValid()) {
+//            $fileName = $_FILES['file']['tmp_name'];
+//            $file = $request->file('file');
+//            $destinationPath = storage_path().'/uploads/';
+//            $extension = $file->getClientOriginalExtension();
+//            $fileName = $fileName.md5(time() . rand(1, 1000)) . '.' . $extension;
+//            var_dump($file->move($destinationPath, $fileName));;
+//            $filePath = asset($destinationPath . $fileName);
+//             dispatch(new WangjiaduImportExcel(['path' => $filePath]));
+//
+//        } else {
+//            return $this->response()->success('上传失败')->refresh();
+//        }
+        return $this->response()->success('上传完成！你先喝杯水，数据较大让子弹飞一会')->refresh();
     }
 
     public function form()
@@ -45,44 +74,5 @@ class Import extends Action
 HTML;
     }
 
-    /**
-     * @param $file
-     */
-    private function jdImport($file)
-    {
-        try {
-            $reader = IOFactory::createReader('Xlsx');
-            $reader->setReadDataOnly(true);//忽略任何格式的信息
-            // 打开文件、载入excel表格
-            $spreadsheet = $reader->load($file);
-
-            dd($spreadsheet);
-            // 获取活动工作薄
-            $sheet = $spreadsheet->getActiveSheet();
-
-            // 获取总列数
-            // $highestColumn = $sheet->getHighestColumn();
-            // 获取总行数
-            $highestRow = $sheet->getHighestRow();
-
-            for ($a = 2; $a < $highestRow; $a++) {
-                $orderId = $sheet->getCell('A' . $a)->getValue();
-                $amountPayable = $sheet->getCell('K', $a)->getValue();
-                $state = $sheet->getCell('L', $a)->getValue();
-                $pay_time = $sheet->getCell('AE', $a)->getValue();
-                $plat = 1;
-                $data[] = [
-                    'order_id' => $orderId,
-                    'amount_payable' => $amountPayable,
-                    'state' => $state,
-                    'pay_time' => $pay_time,
-                    'plat' => $plat,
-                ];
-                dd($data);
-            }
-
-        } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
-        }
-    }
 
 }

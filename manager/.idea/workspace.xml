@@ -2,18 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22d0e5bb-2fe3-4103-990e-82f30348cf0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/composer.phar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/manager.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/EquipmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/EquipmentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helper/ChunkReadExcel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helper/ChunkReadExcel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changelog/wangjiaduorder.sql" beforeDir="false" afterPath="$PROJECT_DIR$/changelog/wangjiaduorder.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/queue.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/queue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/CheckOrder/Actions/Import.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CheckOrder/Actions/Import.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/CheckOrder/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CheckOrder/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonInterval.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonInterval.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonPeriod.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/CarbonPeriod.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/hr.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/hr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/lv.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Lang/lv.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +147,7 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
       <path value="$PROJECT_DIR$/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/vendor/box/spout" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mPPpInCK2i8UTgnhMl20a4Yk4G" />
@@ -189,37 +203,49 @@
       <workItem from="1611886480193" duration="1164000" />
       <workItem from="1612427815659" duration="3036000" />
       <workItem from="1612511309318" duration="1469000" />
-      <workItem from="1612665708633" duration="15141000" />
+      <workItem from="1612665708633" duration="61790000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="617" y="58" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609393842046">
       <screen x="0" y="23" width="1920" height="1016" />
     </state>
     <state x="617" y="58" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1609393842046" />
-    <state x="698" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611800530856">
+    <state x="698" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612858474021">
       <screen x="0" y="23" width="1920" height="1016" />
     </state>
-    <state x="698" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1611800530856" />
-    <state x="704" y="364" key="NewPhpClassDialog" timestamp="1612768245204">
+    <state x="698" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1612858474021" />
+    <state x="704" y="364" key="NewPhpClassDialog" timestamp="1612850586153">
       <screen x="0" y="23" width="1920" height="1016" />
     </state>
-    <state x="704" y="364" key="NewPhpClassDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1612768245204" />
-    <state x="646" y="303" width="628" height="456" key="find.popup" timestamp="1612693353672">
+    <state x="704" y="364" key="NewPhpClassDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1612850586153" />
+    <state x="800" y="465" key="NewPhpFileDialog" timestamp="1612856158048">
       <screen x="0" y="23" width="1920" height="1016" />
     </state>
-    <state x="646" y="303" width="628" height="456" key="find.popup/0.23.1920.1016@0.23.1920.1016" timestamp="1612693353672" />
+    <state x="800" y="465" key="NewPhpFileDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1612856158048" />
+    <state x="690" y="270" width="540" height="524" key="StructurePopup" timestamp="1612848233860">
+      <screen x="0" y="23" width="1920" height="1016" />
+    </state>
+    <state x="690" y="270" width="540" height="524" key="StructurePopup/0.23.1920.1016@0.23.1920.1016" timestamp="1612848233860" />
+    <state x="646" y="303" width="628" height="456" key="find.popup" timestamp="1612848440857">
+      <screen x="0" y="23" width="1920" height="1016" />
+    </state>
+    <state x="646" y="303" width="628" height="456" key="find.popup/0.23.1920.1016@0.23.1920.1016" timestamp="1612848440857" />
     <state x="691" y="172" key="refactoring.ChangeSignatureDialog" timestamp="1612690588905">
       <screen x="0" y="23" width="1920" height="1016" />
     </state>
     <state x="691" y="172" key="refactoring.ChangeSignatureDialog/0.23.1920.1016@0.23.1920.1016" timestamp="1612690588905" />
-    <state x="625" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1612764599315">
-      <screen x="0" y="23" width="1920" height="1016" />
+    <state x="469" y="208" width="670" height="557" key="search.everywhere.popup" timestamp="1613231112276">
+      <screen x="0" y="23" width="1440" height="836" />
     </state>
-    <state x="625" y="248" width="670" height="676" key="search.everywhere.popup/0.23.1920.1016@0.23.1920.1016" timestamp="1612764599315" />
+    <state x="469" y="208" width="670" height="557" key="search.everywhere.popup/0.23.1440.836@0.23.1440.836" timestamp="1613231112276" />
+    <state x="625" y="248" width="670" height="676" key="search.everywhere.popup/0.23.1920.1016@0.23.1920.1016" timestamp="1612924237146" />
   </component>
 </project>

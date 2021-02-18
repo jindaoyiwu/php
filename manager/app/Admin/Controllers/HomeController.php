@@ -2,7 +2,10 @@
 
 namespace App\Admin\Controllers;
 
+use App\Helper\Logger;
 use App\Http\Controllers\Controller;
+use App\Jobs\WangjiaduImportExcel;
+use App\Model\MeizhouOrder;
 use Encore\Admin\Controllers\Dashboard;
 use Encore\Admin\Layout\Column;
 use Encore\Admin\Layout\Content;
@@ -12,7 +15,7 @@ use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 use Illuminate\Support\Facades\Redis;
-
+use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
 class HomeController extends Controller
 {
     public function index(Content $content)
@@ -57,8 +60,8 @@ class HomeController extends Controller
 //        $element->clear(); //清空
 //        $element->sendKeys("");//自动填写淘宝密码
 //        $driver->findElement(WebDriverBy::id('J_SubmitStatic'))->click();
-        Redis::set('name', 'guwenjie');
-        $values = Redis::get('name');
-        dd($values);
+        dispatch(new WangjiaduImportExcel(['path' => '/www/php/manager/storage/app/upload/8ab58426284177d2436708c050470771.xlsx']));
+
+        echo  1;
     }
 }
