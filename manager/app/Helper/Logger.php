@@ -22,6 +22,10 @@ class Logger
      */
     public static function __callStatic($method, $arguments) {
         $arguments[1] = $arguments[1] ?? [];
+        // 如果是错误发送邮件报警
+        if ($method == 'error') {
+
+        }
         return (new Monolog('local'))
             ->pushHandler(new RotatingFileHandler(storage_path("logs/web.log")))
             ->$method(date('Y-m-d H:i:s').$arguments[0], $arguments[1]);
