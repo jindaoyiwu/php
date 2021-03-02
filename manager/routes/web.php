@@ -15,3 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('mail/send','MailController@send');
+
+Route::group(['namespace' => 'Auth'], function()    {
+
+    Route::post('verify-code/send', 'LoginController@verifyCode');
+
+});
+

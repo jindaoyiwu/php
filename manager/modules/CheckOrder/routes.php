@@ -12,6 +12,8 @@ Route::group([
 ], function (Router $router) {
     $router->get('/index', 'OrderController@index');
     $router->get('/bill/index', 'BillController@index');
+    $router->get('/delivery/index', 'DeliveryController@index');
+    $router->get('/indemnity/index', 'IndemnityController@index');
 
     $router->get('/index/{id}/edit', 'ForbiddenAntiSpamController@edit');
     $router->get('/index/create', 'ForbiddenAntiSpamController@edit');

@@ -231,7 +231,7 @@ abstract class Extension
     }
 
     /**
-     * Import menu item and permission to laravel-admin.
+     * OrderImport menu item and permission to laravel-admin.
      */
     public static function import()
     {

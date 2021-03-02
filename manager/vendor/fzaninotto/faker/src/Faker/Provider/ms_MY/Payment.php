@@ -71,7 +71,7 @@ class Payment extends \Faker\Provider\Payment
         'Bank Rakyat',
         'Bank Simpanan Nasional',
         'Credit Guarantee Corporation Malaysia Berhad (CGC)',
-        'Export-Import Bank of Malaysia Berhad (Exim Bank)',
+        'Export-OrderImport Bank of Malaysia Berhad (Exim Bank)',
         'Malaysia Debt Ventures Berhad',
         'Malaysian Industrial Development Finance Berhad (MIDF)',
         'SME Bank Berhad',

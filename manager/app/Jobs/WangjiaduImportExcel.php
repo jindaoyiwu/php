@@ -85,10 +85,10 @@ class WangjiaduImportExcel implements ShouldQueue
                     throw new \Exception('插入失败');
                 }
             }
-            // 取唯一order_id
+            // 取唯一groupBy order_id
             $orders = MeizhouOrder::where('updated_time', $updated_time)->groupBy('order_id')
                 ->select(['order_id','amount_payable','state','plat','pay_time','order_time'])->get()->toArray();
-            $chunk = array_chunk($orders, 1000);
+            $chunk = array_chunk($orders, 10000);
             foreach ($chunk as $item) {
                 if((new MeizhouOrderArrange())->insert($item) == false){
                     throw new \Exception('插入失败');

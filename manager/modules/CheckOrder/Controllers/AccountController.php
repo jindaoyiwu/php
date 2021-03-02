@@ -13,7 +13,7 @@ use Illuminate\Support\MessageBag;
 use Modules\CheckOrder\Actions\OrderImport;
 
 
-class OrderController extends Controller
+class AccountController extends Controller
 {
     const PAGE_SIZE = 20;
     const PAGE_DEFAULT = 1;
@@ -64,9 +64,9 @@ class OrderController extends Controller
         $request = self::_filterWhere($request);
 
         return $content
-            ->header('订单管理')
+            ->header('对账管理')
             ->breadcrumb(
-                ['text' => '订单列表', 'url' => '/forbiddenWord/index']
+                ['text' => '订单列表', 'url' => '']
             )
             ->body(self::listAction($request));
     }

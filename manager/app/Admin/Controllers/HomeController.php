@@ -4,6 +4,8 @@ namespace App\Admin\Controllers;
 
 use App\Helper\Logger;
 use App\Http\Controllers\Controller;
+use App\Jobs\WangjiaduBillImportExcel;
+use App\Jobs\WangjiaduDeliveryImportExcel;
 use App\Jobs\WangjiaduImportExcel;
 use App\Model\MeizhouOrder;
 use Encore\Admin\Controllers\Dashboard;
@@ -60,7 +62,7 @@ class HomeController extends Controller
 //        $element->clear(); //清空
 //        $element->sendKeys("");//自动填写淘宝密码
 //        $driver->findElement(WebDriverBy::id('J_SubmitStatic'))->click();
-        dispatch(new WangjiaduImportExcel(['path' => '/www/php/manager/storage/app/upload/8ab58426284177d2436708c050470771.xlsx']));
+        dispatch(new WangjiaduDeliveryImportExcel(['path' => '/www/php/manager/storage/app/upload/京东delivery.xlsx']));
 
         echo  1;
     }

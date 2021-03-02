@@ -44,7 +44,7 @@ class RouteCollectionBuilder
     }
 
     /**
-     * Import an external routing resource and returns the RouteCollectionBuilder.
+     * OrderImport an external routing resource and returns the RouteCollectionBuilder.
      *
      *     $routes->import('blog.yml', '/blog');
      *

@@ -35,7 +35,7 @@ class ImportCommand extends Command
     {
         $this
         ->setName('dbal:import')
-        ->setDescription('Import SQL file(s) directly to Database.')
+        ->setDescription('OrderImport SQL file(s) directly to Database.')
         ->setDefinition([new InputArgument(
             'file',
             InputArgument::REQUIRED | InputArgument::IS_ARRAY,
@@ -43,7 +43,7 @@ class ImportCommand extends Command
         ),
         ])
         ->setHelp(<<<EOT
-Import SQL file(s) directly to Database.
+OrderImport SQL file(s) directly to Database.
 EOT
         );
     }

@@ -104,7 +104,7 @@ class Swift_CharacterStream_ArrayCharacterStream implements Swift_CharacterStrea
     }
 
     /**
-     * Import a string a bytes into this CharacterStream, overwriting any existing
+     * OrderImport a string a bytes into this CharacterStream, overwriting any existing
      * data in the stream.
      *
      * @param string $string

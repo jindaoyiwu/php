@@ -48,7 +48,7 @@ class CachingStrategyFactory
      * best when the indexes of the shared strings are sorted in the sheet data.
      * 10,000 was chosen because it creates small files that are fast to be loaded in memory.
      */
-    const MAX_NUM_STRINGS_PER_TEMP_FILE = 10000;
+    const MAX_NUM_STRINGS_PER_TEMP_FILE = 100000;
 
     /**
      * Returns the best caching strategy, given the number of unique shared strings
