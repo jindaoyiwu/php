@@ -22,6 +22,7 @@ class ComposerStaticInit7d0a1f165f51410c7ba17b7fe841c09f
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '4e8671d7be9056dcd04ddd9e8e15f9cc' => __DIR__ . '/..' . '/encore/laravel-admin/src/helpers.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'abede361264e2ae69ec1eee813a101af' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/abs.php',
         '21a5860fbef5be28db5ddfbc3cca67c4' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/acos.php',
@@ -84,7 +85,6 @@ class ComposerStaticInit7d0a1f165f51410c7ba17b7fe841c09f
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
-        '4e8671d7be9056dcd04ddd9e8e15f9cc' => __DIR__ . '/..' . '/encore/laravel-admin/src/helpers.php',
         '2a3c2110e8e0295330dc3d11a4cbc4cb' => __DIR__ . '/..' . '/php-webdriver/webdriver/lib/Exception/TimeoutException.php',
     );
 
@@ -181,6 +181,7 @@ class ComposerStaticInit7d0a1f165f51410c7ba17b7fe841c09f
         ),
         'J' => 
         array (
+            'Jxlwqq\\JsonEditor\\' => 18,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
@@ -448,6 +449,10 @@ class ComposerStaticInit7d0a1f165f51410c7ba17b7fe841c09f
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'Jxlwqq\\JsonEditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jxlwqq/json-editor/src',
+        ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -595,8 +600,10 @@ class ComposerStaticInit7d0a1f165f51410c7ba17b7fe841c09f
         'App\\Jobs\\WangjiaduBillImportExcel' => __DIR__ . '/../..' . '/app/Jobs/WangjiaduBillImportExcel.php',
         'App\\Jobs\\WangjiaduDeliveryImportExcel' => __DIR__ . '/../..' . '/app/Jobs/WangjiaduDeliveryImportExcel.php',
         'App\\Jobs\\WangjiaduImportExcel' => __DIR__ . '/../..' . '/app/Jobs/WangjiaduImportExcel.php',
+        'App\\Jobs\\WangjiaduIndemnityImportExcel' => __DIR__ . '/../..' . '/app/Jobs/WangjiaduIndemnityImportExcel.php',
         'App\\Model\\MeizhouBill' => __DIR__ . '/../..' . '/app/Model/MeizhouBill.php',
         'App\\Model\\MeizhouDelivery' => __DIR__ . '/../..' . '/app/Model/MeizhouDelivery.php',
+        'App\\Model\\MeizhouIndemnity' => __DIR__ . '/../..' . '/app/Model/MeizhouIndemnity.php',
         'App\\Model\\MeizhouOrder' => __DIR__ . '/../..' . '/app/Model/MeizhouOrder.php',
         'App\\Model\\MeizhouOrderArrange' => __DIR__ . '/../..' . '/app/Model/MeizhouOrderArrange.php',
         'App\\Model\\QuarterlyDeclaration' => __DIR__ . '/../..' . '/app/Model/QuarterlyDeclaration.php',
@@ -3356,6 +3363,9 @@ class ComposerStaticInit7d0a1f165f51410c7ba17b7fe841c09f
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Jxlwqq\\JsonEditor\\Editor' => __DIR__ . '/..' . '/jxlwqq/json-editor/src/Editor.php',
+        'Jxlwqq\\JsonEditor\\JsonEditorExtension' => __DIR__ . '/..' . '/jxlwqq/json-editor/src/JsonEditorExtension.php',
+        'Jxlwqq\\JsonEditor\\JsonEditorServiceProvider' => __DIR__ . '/..' . '/jxlwqq/json-editor/src/JsonEditorServiceProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -3524,10 +3534,12 @@ class ComposerStaticInit7d0a1f165f51410c7ba17b7fe841c09f
         'Modules\\CheckOrder\\Actions\\AccountExport' => __DIR__ . '/../..' . '/modules/CheckOrder/Actions/AccountExport.php',
         'Modules\\CheckOrder\\Actions\\BillImport' => __DIR__ . '/../..' . '/modules/CheckOrder/Actions/BillImport.php',
         'Modules\\CheckOrder\\Actions\\DeliveryImport' => __DIR__ . '/../..' . '/modules/CheckOrder/Actions/DeliveryImport.php',
+        'Modules\\CheckOrder\\Actions\\IndemnityImport' => __DIR__ . '/../..' . '/modules/CheckOrder/Actions/IndemnityImport.php',
         'Modules\\CheckOrder\\Actions\\OrderImport' => __DIR__ . '/../..' . '/modules/CheckOrder/Actions/OrderImport.php',
         'Modules\\CheckOrder\\Controllers\\AccountController' => __DIR__ . '/../..' . '/modules/CheckOrder/Controllers/AccountController.php',
         'Modules\\CheckOrder\\Controllers\\BillController' => __DIR__ . '/../..' . '/modules/CheckOrder/Controllers/BillController.php',
         'Modules\\CheckOrder\\Controllers\\DeliveryController' => __DIR__ . '/../..' . '/modules/CheckOrder/Controllers/DeliveryController.php',
+        'Modules\\CheckOrder\\Controllers\\IndemnityController' => __DIR__ . '/../..' . '/modules/CheckOrder/Controllers/IndemnityController.php',
         'Modules\\CheckOrder\\Controllers\\OrderController' => __DIR__ . '/../..' . '/modules/CheckOrder/Controllers/OrderController.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',
         'Monolog\\Formatter\\ChromePHPFormatter' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php',

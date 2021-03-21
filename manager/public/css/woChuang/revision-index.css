@@ -1,0 +1,334 @@
+body{
+	background: #f8f8f8;
+}
+.banner-new{
+    width: 100%;
+    height: auto;
+}
+.banner-new ul{
+    margin: 0;
+}
+.banner-new img{
+    width: 100%;
+}
+.swiper-pagination-bullet{
+    background: #fff;
+    opacity: 0.6;
+}
+.swiper-pagination-bullet-active{
+    background: #22b0eb;
+    opacity: 1;
+}
+.index-type{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding-bottom: 16px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+.index-type ul{
+    width: 100%;
+    margin: 0;
+}
+.index-type ul li{
+    width: 25%;
+    float: left;
+}
+.index-type ul li a{
+    display: block;
+}
+.index-type ul li p{
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+    line-height: 14px;
+    margin-top: 8px;
+}
+.index-type ul li img{
+    width: 38px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 16px;
+}
+.index-type ul li i{
+    width: 38px;
+    height: 38px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.index-type ul li i.type-icon1{
+    background: url("img/type-icon_03.png");
+    background-size: 100% 100%;
+}
+.index-type ul li i.type-icon2{
+    background: url("img/type-icon_05.png");
+    background-size: 100% 100%;
+}
+.index-type ul li i.type-icon3{
+    background: url("img/type-icon_07.png");
+    background-size: 100% 100%;
+}
+.index-type ul li i.type-icon4{
+    background: url("img/type-icon_09.png");
+    background-size: 100% 100%;
+}
+.index-type ul li i.type-icon5{
+    background: url("img/type-icon_16.png");
+    background-size: 100% 100%;
+}
+.index-type ul li i.type-icon6{
+    background: url("img/type-icon_18.png");
+    background-size: 100% 100%;
+}
+.index-type ul li i.type-icon7{
+    background: url("img/type-icon_21.png");
+    background-size: 100% 100%;
+}
+.index-type ul li i.type-icon8{
+    background: url("img/type-icon_24.png");
+    background-size: 100% 100%;
+}
+
+.small-banner-new{
+    width: 100%;
+    margin-top: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+.small-banner-new img{
+    width: 100%;
+}
+.hot-index{
+    width: 100%;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+.hot-title{
+	position: relative;
+    width: 100%;
+    height: 28px;
+    background: #fff;
+    border-bottom: 1px solid #03abf1;
+}
+.hot-title p{
+	position: absolute;
+	top: -13px;
+	left: 50%;
+    width: 130px;
+    height: 40px;
+    background: url(img/hot-title-bg.png) no-repeat;
+    background-size: 130px 40px;
+    margin-left: -65px;
+}
+.hot-index ul{
+    margin: 0;
+    width: 100%;
+}
+.hot-index ul li{
+    width: 33.3%;
+    float: left;
+    height: 63px;
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+.hot-index ul li:first-child{
+    border-left: none;
+}
+.hot-index ul li:nth-child(4){
+    border-left: none;
+}
+.hot-index ul li span{
+    width: 38px;
+    height: 38px;
+    float: left;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.hot-index ul li span img{
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+.hot-index ul li p{
+    font-size: 14px;
+    color: #333;
+    line-height: 38px;
+    margin-left: 10px;
+    float: left;
+}
+
+@media screen and (max-width: 360px) {
+    .hot-index ul li span{
+        width: 38px;
+        height: 38px;
+        margin-left: 5px;
+    }
+    .hot-index ul li p{
+        font-size: 12px;
+        color: #333;
+        line-height: 38px;
+        margin-left: 5px;
+        float: left;
+    }
+}
+/**/
+/*行政审批*/
+.government-review {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+.government-title {
+	position: relative;
+    width: 100%;
+    height: 28px;
+    background: #fff;
+    border-bottom: 1px solid #ed556e;
+}
+.government-title h3 {
+    position: absolute;
+	top: -13px;
+	left: 50%;
+    width: 130px;
+    height: 40px;
+    background: url(img/government-title-bg.png) no-repeat;
+    background-size: 130px 40px;
+    margin: 0;
+    margin-left: -65px;
+}
+.government-title p {
+    float: right;
+    padding: 7px 15px;
+}
+.government-title p a {
+	display: block;
+    width: 64px;
+    height: 13px;
+    background: url(img/arrow-left-revision.png) no-repeat;
+    background-size: 64px 13px;
+}
+.government-content ul {
+    margin: 0;
+}
+.government-content ul li{
+    float: left;
+    border-top: 1px solid #eee;
+    padding: 12px 10px 12px 15px;
+    text-align: center;
+}
+.government-content ul li.percent-five{
+    width: 50%;
+    height: 120px;
+    position: relative;
+    border-left: 1px solid #eee;
+}
+.government-content ul li.percent-five:first-child{
+    border-left: none;
+}
+.government-content ul li.percent-five h3 {
+    text-align: left;
+    margin-bottom: 4px;
+}
+.government-content ul li.percent-third {
+    width: 33.3%;
+    padding-top: 12px;
+    border-left: 1px solid #eee;
+}
+.government-content ul li.percent-third p {
+    text-align: center;
+}
+.government-content ul li:nth-child(3n){
+    border-left: none;
+}
+.percent-five img {
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
+}
+.percent-five p.add-position {
+    position: absolute;
+    left: 15px;
+    bottom: 12px;
+}
+.government-content ul li.percent-third h3 {
+    margin: 12px 0 10px 0;
+}
+.government-content ul li h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.government-content ul li p {
+    margin: 0;
+    font-size: 10px;
+    color: #999;
+    text-align: justify;
+    line-height: 18px;
+}
+.government-content ul li p.add-position{
+    font-size: 12px;
+    color: #ff7300;
+}
+.government-content ul li h4 {
+    margin: 0;
+    font-size: 12px;
+    color: #f45b5c;
+}
+/*优势服务*/
+.service-advantage {
+    background: #fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+}
+
+.service-advantage .government-title{
+	border-bottom: 1px solid #25b88a;
+}
+
+.service-advantage .government-title h3{
+	background: url(img/service-advantage-title-bg.png) no-repeat;
+	background-size: 130px 40px;
+}
+
+
+
+
+
+
+.service-advantage .government-content ul li:first-child {
+    border-left: none;
+}
+.service-advantage .government-content ul li:nth-child(3){
+    border-left: 1px solid #eee;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

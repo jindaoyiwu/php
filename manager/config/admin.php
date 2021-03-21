@@ -396,6 +396,14 @@ return [
     |
     */
     'extensions' => [
-
+        'json-editor' => [
+            // set to false if you want to disable this extension
+            'enable' => true,
+            'config' =>
+                [
+                    'mode' => 'code',
+                    'modes' => ['code', 'text', 'tree', 'view'], // allowed modes
+                ],
+        ]
     ],
 ];

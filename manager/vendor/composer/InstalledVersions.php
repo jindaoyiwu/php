@@ -432,6 +432,15 @@ private static $installed = array (
       ),
       'reference' => '9f7a229a69d52506914b4bc61bfdb199d90c5547',
     ),
+    'jxlwqq/json-editor' => 
+    array (
+      'pretty_version' => 'v1.0.8',
+      'version' => '1.0.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd260f4afa8cb1c8349653629fdd626e4f9ca4687',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 

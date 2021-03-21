@@ -94,8 +94,22 @@
       <path value="$PROJECT_DIR$/manager/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/manager/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/manager/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/manager/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/manager/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/manager/vendor/box/spout" />
+      <path value="$PROJECT_DIR$/manager/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/manager/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/manager/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/manager/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/manager/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/manager/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/manager/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/manager/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/manager/vendor/php-webdriver/webdriver" />
+      <path value="$PROJECT_DIR$/manager/vendor/jxlwqq/json-editor" />
     </include_path>
   </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/manager/vendor/autoload.php" />
