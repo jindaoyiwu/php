@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Admin\Controllers;
+namespace Modules\Equipment\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\QuarterlyDeclaration;
-use Doraemon\model\ForbiddenWord\ForbiddenAntiSpam;
-use Doraemon\model\ForbiddenWord\ForbiddenWord;
 use Encore\Admin\Facades\Admin;
-use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
-use Encore\Admin\Show;
+use Encore\Admin\Widgets\Form;
 use Encore\Admin\Widgets\Tab;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
@@ -24,7 +21,7 @@ class EquipmentController extends Controller
         return $content
             ->header('季度申报管理')
             ->breadcrumb(
-                ['text' => '季度申报列表', 'url' => '/quarterly-declarations']
+                ['text' => '季度申报列表', 'url' => '/equipment/quarterly-declarations']
             )
             ->body(self::listAction($request));
     }
@@ -52,7 +49,7 @@ class EquipmentController extends Controller
                     $filter->equal('duty_quarter', '季度')->select(QuarterlyDeclaration::DUTY_QUARTER);
                 });
             });
-            $grid->column('id')->sort();
+//            $grid->column('id');
             $grid->column('region', '法人')->width(100)->editable();
             $grid->column('company', '公司名称')->width(200)->editable();
             $grid->column('cellphone', '手机')->width(100)->editable();
@@ -72,73 +69,12 @@ class EquipmentController extends Controller
 
             $grid->actions(function (Grid\Displayers\Actions $actions) {
                 $actions->disableView();
+                $actions->prepend('<a href="/admin/forbiddenWord/index/' . $actions->row->id . '/edit?word_type=' . $actions->row->forbidden_word . '" class="grid-row-edit"><i class="fa fa-edit"></i>申报</a>');
             });
 
         });
 
         return $listGrid->render();
-    }
-
-    /**
-     * Make a show builder.
-     *
-     * @param mixed $id
-     * @return Show
-     */
-    protected function detail($id)
-    {
-        $show = new Show(QuarterlyDeclaration::findOrFail($id));
-
-        $show->field('id', __('Id'));
-        $show->field('region', __('Region'));
-        $show->field('company', __('Company'));
-        $show->field('cellphone', __('Cellphone'));
-        $show->field('id_number', __('Id number'));
-        $show->field('duty_paragraph', __('Duty paragraph'));
-        $show->field('duty_password', __('Duty password'));
-        $show->field('remark', __('Remark'));
-        $show->field('value_added_tax', __('Value added tax'));
-        $show->field('corporate_income_tax', __('Corporate income tax'));
-        $show->field('cultural_construction_tax', __('Cultural construction tax'));
-        $show->field('stamp_duty', __('Stamp duty'));
-        $show->field('labour_union', __('Labour union'));
-        $show->field('statements', __('Statements'));
-        $show->field('annual_report', __('Annual report'));
-        $show->field('duty_quarter', __('Duty quarter'));
-        $show->field('updated_time', __('Updated time'));
-        $show->field('created_time', __('Created time'));
-
-        return $show;
-    }
-
-    /**
-     * Make a form builder.
-     *
-     * @return Form
-     */
-    protected function form()
-    {
-        $form = new Form(new QuarterlyDeclaration());
-
-        $form->text('region', __('Region'));
-        $form->text('company', __('Company'));
-        $form->text('cellphone', __('Cellphone'));
-        $form->text('id_number', __('Id number'));
-        $form->text('duty_paragraph', __('Duty paragraph'));
-        $form->text('duty_password', __('Duty password'));
-        $form->text('remark', __('Remark'));
-        $form->text('value_added_tax', __('Value added tax'));
-        $form->text('corporate_income_tax', __('Corporate income tax'));
-        $form->text('cultural_construction_tax', __('Cultural construction tax'));
-        $form->text('stamp_duty', __('Stamp duty'));
-        $form->text('labour_union', __('Labour union'));
-        $form->text('statements', __('Statements'));
-        $form->text('annual_report', __('Annual report'));
-        $form->switch('duty_quarter', __('Duty quarter'));
-        $form->datetime('updated_time', __('Updated time'))->default(date('Y-m-d H:i:s'));
-        $form->datetime('created_time', __('Created time'))->default(date('Y-m-d H:i:s'));
-
-        return $form;
     }
 
 
@@ -156,7 +92,7 @@ class EquipmentController extends Controller
             ->breadcrumb(
                 [
                     'text' => '季度申报列表',
-                    'url' => '/quarterly-declarations'
+                    'url' => '/equipment/quarterly-declarations'
                 ],
                 ['text' => "$title"]
             )
@@ -166,15 +102,32 @@ class EquipmentController extends Controller
     private function editAction($id)
     {
         $data = [];
+
         if ($id > 0) {
-            $data = (new QuarterlyDeclaration)->where(['id' => $id, 'is_deleted' => 1])->get();
+            $data = (new QuarterlyDeclaration())->where(['id' => $id, 'is_deleted' => 1])->get()->toArray();
+            $form = new Form($data);
+            $form->hidden('id', 'id');
+        } else {
+            $form = new Form($data);
         }
-        $form = new Form($data);
-        $form->hidden('id', 'id');
-        $form->hidden('auti_spam_id', 'auti_spam_id');
-        $form->text('forbidden_word', '禁用词类型')->disable();
-        $form->textarea('word', '禁用词')->help('批量添加以/分隔')->required('禁用词必填');
-        $form->action('/admin/forbiddenWord/word/index/save');
+        $form->text('region', '法人');
+        $form->text('company', '公司名称');
+        $form->text('cellphone', '手机');
+        $form->text('id_number', '身份证号');
+        $form->text('duty_paragraph', '税号');
+        $form->text('duty_password', '密码');
+        $form->text('remark', '备注');
+        $form->text('value_added_tax', '增值附加税');
+        $form->text('corporate_income_tax', '企业所得税');
+        $form->text('cultural_construction_tax', '文化建设税');
+        $form->text('stamp_duty', '印花税');
+        $form->text('labour_union', '工会');
+        $form->text('statements', '财务报表');
+        $form->text('annual_report', '年报');
+        $form->text('year', '年份');
+        $form->text('duty_quarter', '季度');
+
+        $form->action('/admin/equipment/quarterly-declarations/save');
 
         return $form;
     }
@@ -184,42 +137,29 @@ class EquipmentController extends Controller
     {
         $request = $request->all();
         unset($request['_token']);
-        if (strpos($request['word'], '/') !== false) {
-            $words = explode('/', $request['word']);
-            foreach ($words as $item) {
-                if (empty($item)) {
-                    continue;
-                }
-                $insertData[] = ['auti_spam_id' => $request['auti_spam_id'], 'word' => $item];
-            }
-        } else {
-            $words = $request['word'];
-            $insertData['auti_spam_id'] = $request['auti_spam_id'];
-            $insertData['word'] = $request['word'];
+        foreach ($request as &$value) {
+            $value = $value != null ? $value : '';
         }
-        $one = ForbiddenWord::get('*', ['word' => $words, 'state' => ForbiddenAntiSpam::STATE_SUCCESS]);
-        if ($one != null) {
+        if (!empty($request['id'])) {
+            $one = QuarterlyDeclaration::where(['region' => $request['region']])->get();
             $error = new MessageBag([
                 'title' => $one['word'] . '禁用词已经存在'
             ]);
             return back()->with(compact('error'));
         }
-        $num = 0;
         if (isset($request['id']) && $request['id']) {
             //修改
-            $result = ForbiddenWord::update($request, ['id' => $request['id']]);
-            $num = $result->rowCount();
-        } else if (!empty($insertData)) {
-            unset($request['id']);
+            $result = QuarterlyDeclaration::update($request, ['id' => $request['id']]);
+        } else {
             //添加
-            $result = ForbiddenWord::insert($insertData);
+            $result = QuarterlyDeclaration::insert($request);
         }
 
-        if ($num > 0 || $result) {
+        if ($result) {
             $success = new MessageBag([
                 'title' => '保存成功'
             ]);
-            return redirect('/admin/forbiddenWord/word/index/' . $request['auti_spam_id'])->with(compact('success'));
+            return redirect('/admin/equipment/quarterly-declarations')->with(compact('success'));
 
         } else {
             $error = new MessageBag([
@@ -227,6 +167,19 @@ class EquipmentController extends Controller
             ]);
             return back()->with(compact('error'));
         }
+    }
+
+    public function lineEdit(Request $request)
+    {
+        $id = $request->get('id');
+        $name = $request->get('name');
+        $value = $request->get('value');
+        QuarterlyDeclaration::where('id', $id)->update([$name => $value])->tosql();
+
+        return response()->json([
+            'status' => true,
+            'message' => "操作成功",
+        ]);
     }
 
 }

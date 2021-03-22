@@ -18,6 +18,8 @@ use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 use Illuminate\Support\Facades\Redis;
 use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+
 class HomeController extends Controller
 {
     public function index(Content $content)
@@ -62,8 +64,21 @@ class HomeController extends Controller
 //        $element->clear(); //清空
 //        $element->sendKeys("");//自动填写淘宝密码
 //        $driver->findElement(WebDriverBy::id('J_SubmitStatic'))->click();
-        dispatch(new WangjiaduDeliveryImportExcel(['path' => '/www/php/manager/storage/app/upload/京东delivery.xlsx']));
-
-        echo  1;
+        //dispatch(new WangjiaduDeliveryImportExcel(['path' => '/www/php/manager/storage/app/upload/京东delivery.xlsx']));
+        $inputFileType = 'Xlsx';
+//    $inputFileType = 'Xlsx';
+//    $inputFileType = 'Xml';
+//    $inputFileType = 'Ods';
+//    $inputFileType = 'Slk';
+//    $inputFileType = 'Gnumeric';
+//    $inputFileType = 'Csv';
+        $inputFileName = '/www/php/manager/storage/app/upload/京东delivery.xlsx';
+        /**  Create a new Reader of the type defined in $inputFileType  **/
+        $reader = IOFactory::createReader($inputFileType);
+        /**  Load $inputFileName to a Spreadsheet Object  **/
+        $spreadsheet = $reader->load($inputFileName);
+        $worksheet = $spreadsheet->getActiveSheet();
+        $highestRow = $worksheet->getHighestRow(); // 总行
+        echo  $highestRow;
     }
 }
