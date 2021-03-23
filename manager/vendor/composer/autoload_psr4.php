@@ -80,6 +80,8 @@ return array(
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
     'Complex\\' => array($vendorDir . '/markbaker/complex/classes/src'),
+    'Codingyu\\Ueditor\\' => array($vendorDir . '/codingyu/ueditor/src'),
+    'Codingyu\\LaravelUEditor\\' => array($vendorDir . '/codingyu/laravel-ueditor/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Box\\Spout\\' => array($vendorDir . '/box/spout/src/Spout'),
     'BeyondCode\\DumpServer\\' => array($vendorDir . '/beyondcode/laravel-dump-server/src'),

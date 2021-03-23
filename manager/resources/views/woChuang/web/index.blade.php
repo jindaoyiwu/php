@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<!-- saved from url=(0025)https://m.juejinqifu.com/ -->
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, viewport-fit=cover">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <meta name="csrf-param" content="_csrf-mobile">
-    <meta name="csrf-token"
-          content="75d_a1qsxgabI2OVDD76tg26wn2HFz3ijOabVbB1ma2J3kkyN-2ccvxJEcU9ap_1WNmTLuxcCZHZocECyhTY_Q==">
-    <meta content="black" name="apple-mobile-web-app-status-bar-style">
-    <!--//强制竖屏-->
-    <meta name="x5-orientation" content="portrait">
-    <meta name="screen-orientation" content="portrait">
-    <meta content="telephone=no" name="format-detection">
-    <title>北京公司注册_代理记账_注册公司_建筑资质-【掘金企服】一站式创业服务平台</title>
-    <meta name="description"
-          content="掘金企服提供北京公司注册,北京代理记账,北京注册公司,代办注册商标,北京建筑资质等服务,为企业提供“从创业到上市”全生命周期服务,服务热线400-6060-999.">
-    <meta name="keywords" content="北京公司注册,北京注册公司,北京代理记账,北京建筑资质,北京商标注册,互联网资质,掘金企服">
+@extends('woChuang.web.layout')
+@section('content')
     <link href="http://manager.com/css/woChuang/bootstrap.css" rel="stylesheet">
     <link href="http://manager.com/css/woChuang/animate.css" rel="stylesheet">
     <link href="http://manager.com/css/woChuang/revision-common.css" rel="stylesheet">
@@ -25,9 +8,6 @@
     <link href="http://manager.com/css/woChuang/revision-index.css" rel="stylesheet">
     <script src="http://manager.com/js/woChuang/getjs_bdt.js"></script>
     <script src="http://manager.com/js/woChuang/MsQpfQg1.js" type="text/javascript"></script>
-</head>
-<body>
-
 <div class="public-head-one clear-fix">
     <div class="public-head-logo">
         <a href="https://m.juejinqifu.com/">
@@ -52,16 +32,6 @@
             </a>
         </li>
         <li class="swiper-slide" style="width: 400px;">
-            <a href="https://m.juejinqifu.com/redirect-statistics/go.html?key=162&amp;uri=https%3A%2F%2Fm.juejinqifu.com%2Ftopic%2Fmedical-device.html">
-                <img src="http://manager.com/upload/20200430-1588226406.jpg" alt="医疗器械许可备案">
-            </a>
-        </li>
-        <li class="swiper-slide" style="width: 400px;">
-            <a href="https://m.juejinqifu.com/redirect-statistics/go.html?key=167&amp;uri=https%3A%2F%2Fm.juejinqifu.com%2Ftopic%2Fculture-license.html">
-                <img src="http://manager.com/upload/20200520-1589941843.png" alt="直播网文">
-            </a>
-        </li>
-        <li class="swiper-slide" style="width: 400px;">
             <a href="https://m.juejinqifu.com/redirect-statistics/go.html?key=163&amp;uri=https%3A%2F%2Fm.juejinqifu.com%2Ftopic%2Fjwzz.html">
                 <img src="http://manager.com/upload/20200430-1588228405.jpg" alt="建筑资质">
             </a>
@@ -83,12 +53,14 @@
         </li>
     </ul>
     <!-- Add Pagination -->
-    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
-            class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
-            class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
-            class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
-            class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span
-            class="swiper-pagination-bullet"></span></div>
+    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+        <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+    </div>
 </div>
 
 <div class="index-type">
@@ -123,8 +95,6 @@
         </li>
     </ul>
 </div>
-
-
 <div class="small-banner-new">
     <img src="http://manager.com/upload/small-banner-new_04.png" alt="掘金企服">
 </div>
@@ -306,10 +276,6 @@
         </a>
     </div>
 </div>
-<script src="http://manager.com/js/woChuang/375060.js" defer="" async=""></script>
-<script src="http://manager.com/js/woChuang/push.js"></script>
-<script src="http://manager.com/js/woChuang/hm.js"></script>
-<script type="text/javascript" src="http://manager.com/js/woChuang/jweixin-1.3.2.js"></script>
 
 <div class="footer">
     <ul class="row" id="hFive" style="padding-bottom: 34px; display: block;">
@@ -335,6 +301,11 @@
         </li>
     </ul>
 </div>
+
+<script src="http://manager.com/js/woChuang/375060.js" defer="" async=""></script>
+<script src="http://manager.com/js/woChuang/push.js"></script>
+<script src="http://manager.com/js/woChuang/hm.js"></script>
+<script src="http://manager.com/js/woChuang/jweixin-1.3.2.js"></script>
 <script type="text/javascript" src="http://manager.com/js/woChuang/jweixin-1.3.2.js"></script>
 <script src="http://manager.com/js/woChuang/jquery-1.11.3.min.js"></script>
 <script src="http://manager.com/js/woChuang/bootstrap.js"></script>
@@ -560,7 +531,5 @@
     })();
 </script>
 <script src="http://manager.com/js/woChuang/11.0.1.js" id="sozz"></script>
-
 <script charset="utf-8" src="http://manager.com/js/woChuang/ab77b6ea7f3fbf79.js"></script>
-</body>
-</html>
+@stop

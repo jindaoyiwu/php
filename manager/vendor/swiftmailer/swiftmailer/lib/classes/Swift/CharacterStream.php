@@ -39,7 +39,7 @@ interface Swift_CharacterStream
     public function importByteStream(Swift_OutputByteStream $os);
 
     /**
-     * OrderImport a string a bytes into this CharacterStream, overwriting any existing
+     * Import a string a bytes into this CharacterStream, overwriting any existing
      * data in the stream.
      *
      * @param string $string

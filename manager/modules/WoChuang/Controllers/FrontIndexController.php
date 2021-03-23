@@ -23,8 +23,8 @@ class FrontIndexController extends Controller
      */
     public function index(Request $request)
     {
-        $line = KvStore::where(['module'=>'wochuang', 'keys'=>'index'])->first()->toArray();
-        $data['value'] = $line['value'];
+//        $line = KvStore::where(['module'=>'wochuang', 'keys'=>'index'])->first()->toArray();
+//        $data['value'] = $line['value'];
         return View('woChuang.web.index');
     }
 
