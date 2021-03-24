@@ -34,7 +34,7 @@ class Images extends Model
     public function getList($conditions)
     {
         $query = $this->listQueryBuilder($conditions);
-        return $this->where($query);
+        return $this->where($query)->orderBy('created_at','desc');
     }
 
 }
