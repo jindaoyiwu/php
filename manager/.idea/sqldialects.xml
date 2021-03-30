@@ -3,5 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/changelog/money.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/changelog/wangjiaduorder.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/changelog/wochuang.sql" dialect="MariaDB" />
   </component>
 </project>

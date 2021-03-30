@@ -33,7 +33,7 @@ class ImagesController extends Controller
         $grid->disableExport();
         $grid->disableRowSelector();
         $grid->disableFilter();
-
+        $grid->disableActions();
         $grid->column('id', 'id')->width(100);
         $grid->column('path', '地址')->width(400);
         $grid->column('description', '描述')->width(400);
@@ -43,9 +43,10 @@ class ImagesController extends Controller
             }
         );
 
-        $grid->actions(function (Grid\Displayers\Actions $actions) {
-            $actions->disableView();
-        });
+//        $grid->actions(function (Grid\Displayers\Actions $actions) {
+//            $actions->disableView();
+//            $actions->disableEdit();
+//        });
         return $grid->render();
     }
 

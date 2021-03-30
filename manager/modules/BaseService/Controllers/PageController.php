@@ -37,43 +37,48 @@ class PageController extends Controller
         $grid->column('id', 'id')->width(100);
         $grid->column('uri', '路径')->width(300);
         $grid->column('page_name', '页面名称')->width(400);
-        $grid->column('', '图片')->display(
-            function () {
-                return '<div style="width: 100px; height: 100px"><img width="200px" height="200px" src="'.$this->path.'"></div>';
-            }
-        );
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             $actions->disableView();
+
         });
         return $grid->render();
     }
 
 
-    public function create(Request $request, Content $content)
+    public function create(Request $request, Content $content, $id = 0)
     {
         $tab = new Tab();
-        $title = '添加图片';
-        $tab->add("$title", $this->editAction());
+        if (empty($id)) {
+            $title = '新增页面';
+        } else {
+            $title = '编辑页面';
+        }
+
+        $tab->add("$title", $this->editAction($id));
         return $content
             ->breadcrumb(
                 [
-                    'text' => '图片列表',
-                    'url' => '/baseService/image/index'
+                    'text' => '页面列表',
+                    'url' => '/baseService/page/index'
                 ],
                 ['text' => "$title"]
             )
             ->body($tab);
     }
 
-    private function editAction()
+    private function editAction($id)
     {
         $data = [];
+        if (!empty($id)) {
+            $data = CustomPage::where(['id' => $id])->first()->toArray();
+        }
         $form = new Form($data);
-        $form->text('description', '描述');
-        $form->image('path', '图片');
-
-        $form->action('/admin/baseService/image/save');
+        $form->hidden('id', 'id');
+        $form->text('uri', '路径');
+        $form->text('page_name', '页面名称');
+        $form->UEditor('content')->options(['initialFrameHeight' => 800]);
+        $form->action('/admin/baseService/page/save');
 
         return $form;
     }
@@ -81,21 +86,21 @@ class PageController extends Controller
     public function save(Request $request)
     {
         $request = $request->all();
-        $fileSystem = $request['path'];
-        $name = date('Y-m-dH:i:s') . base64_encode(time()) . '.' . $fileSystem->guessClientExtension();
-        $fileSystem->move(public_path('upload/images'), $name);
-        $path = public_path('upload/images') . '/' . $name;
-        $realPath = public_path();
-        $url = env('APP_URL') . substr($path, strlen($realPath));
-        $request['path'] = $url;
         unset($request['_token']);
         //添加
-        $result = Images::insert($request);
+        if (empty($request['id'])) {
+            $result = CustomPage::insert($request);
+        } else {
+            $data['uri'] = $request['uri'];
+            $data['page_name'] = $request['page_name'];
+            $data['content'] = $request['content'];
+            $result = CustomPage::where(['id' => $request['id']])->update($data);
+        }
         if ($result) {
             $success = new MessageBag([
                 'title' => '保存成功'
             ]);
-            return redirect('/admin/baseService/image/index')->with(compact('success'));
+            return redirect('/admin/baseService/page/index')->with(compact('success'));
 
         } else {
             $error = new MessageBag([
