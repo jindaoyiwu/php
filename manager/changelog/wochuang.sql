@@ -24,6 +24,7 @@ create table custom_page(
     page_name varchar(100)         NOT NULL DEFAULT '' COMMENT '页面名称',
     content       MEDIUMTEXT    NOT NULL  COMMENT '页面内容',
     uri       varchar(100)   NOT NULL  COMMENT '页面路径',
+    prefix       varchar(100)   NOT NULL  COMMENT '前缀',
     deleted tinyInt(1) not null default 0 comment '1删除， 0存在',
     `updated_at` timestamp           NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
     `created_at` timestamp           NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',

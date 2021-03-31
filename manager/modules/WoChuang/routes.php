@@ -14,11 +14,7 @@ Route::group([
     $router->post('/index/save', 'IndexController@save');
     $router->get('/navigation', 'NavigationController@index');
     $router->post('/navigation/save', 'NavigationController@save');
-    $router->get('/news', 'NewsController@index');
     $router->post('/news/save', 'NewsController@save');
-});
-Route::get('/welcome', function () {
-    return view('welcome');
 });
 
 Route::group([
@@ -29,9 +25,10 @@ Route::group([
     ],
 ], function (Router $router) {
     $router->get('/index', 'FrontIndexController@index');
+    $router->get('/page/{name}', 'FrontPageController@index');
+    $router->get('/news', 'FrontNewsController@index');
     $router->post('/index/save', 'IndexController@save');
     $router->get('/navigation', 'NavigationController@index');
     $router->post('/navigation/save', 'NavigationController@save');
-    $router->get('/news', 'NewsController@index');
     $router->post('/news/save', 'NewsController@save');
 });

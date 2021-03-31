@@ -77,6 +77,7 @@ class PageController extends Controller
         }
         $form = new Form($data);
         $form->hidden('id', 'id');
+        $form->select('prefix', '前缀')->options(CustomPage::PREFIX);
         $form->text('uri', '路径');
         $form->text('page_name', '页面名称');
         $form->UEditor('content')->options(['initialFrameHeight' => 800]);
@@ -96,6 +97,7 @@ class PageController extends Controller
             $data['uri'] = $request['uri'];
             $data['page_name'] = $request['page_name'];
             $data['content'] = $request['content'];
+            $data['prefix'] = $request['prefix'];
             $result = CustomPage::where(['id' => $request['id']])->update($data);
         }
         if ($result) {

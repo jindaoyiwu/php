@@ -13,6 +13,9 @@ class CustomPage extends Model
 
     protected $guarded = ['id'];
 
+    const PREFIX = [
+        'front/woChuang' => 'front/woChuang'
+    ];
     /**
      * @param array $conditions
      * @return mixed

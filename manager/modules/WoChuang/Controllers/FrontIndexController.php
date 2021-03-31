@@ -30,21 +30,4 @@ class FrontIndexController extends Controller
 
 
 
-
-    public function save(Request $request)
-    {
-        $request = $request->all();
-        $line = KvStore::updateOrCreate(['keys' => 'index', 'value' => $request['value']], ['module'=>'wochuang', 'keys'=>'index']);
-        if ($line) {
-            $success = new MessageBag([
-                'title' => '保存成功'
-            ]);
-            return redirect('/admin/woChuang/index')->with(compact('success'));
-        } else {
-            $error = new MessageBag([
-                'title' => '保存失败'
-            ]);
-            return back()->with(compact('error'));
-        }
-    }
 }
