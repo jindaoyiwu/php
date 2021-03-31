@@ -25,6 +25,9 @@ class CustomPage extends Model
             $query->newQuery()
                 ->when(!empty($description), function ($query) use ($description) {
                     $query->where('remark', 'like', "%{$description}%");
+                })
+                ->where(function ($query) {
+                    $query->where('deleted', '=', 0);
                 });
         };
     }
@@ -33,6 +36,11 @@ class CustomPage extends Model
     {
         $query = $this->listQueryBuilder($conditions);
         return $this->where($query)->orderBy('id','desc');
+    }
+
+    public function del($conditions)
+    {
+        return $this->where(['id' => $conditions['id']])->update(['deleted' => 1]);
     }
 
 }

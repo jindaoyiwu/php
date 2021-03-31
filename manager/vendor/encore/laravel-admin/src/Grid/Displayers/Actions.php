@@ -59,7 +59,6 @@ class Actions extends AbstractDisplayer
     public function prepend($action)
     {
         array_unshift($this->prepends, $action);
-
         return $this;
     }
 
@@ -169,7 +168,6 @@ class Actions extends AbstractDisplayer
         if ($this->disableAll) {
             return '';
         }
-
         $actions = $this->prepends;
 
         foreach ($this->actions as $action) {

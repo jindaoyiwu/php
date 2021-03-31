@@ -2,15 +2,16 @@
 
 namespace Modules\BaseService\Controllers;
 
+use App\Admin\Actions\Delete;
 use App\Http\Controllers\Controller;
 use App\Model\CustomPage;
-use App\Model\Images;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Widgets\Form;
 use Encore\Admin\Widgets\Tab;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
+
 
 class PageController extends Controller
 {
@@ -21,7 +22,7 @@ class PageController extends Controller
         return $content
             ->header('页面管理')
             ->breadcrumb(
-                ['text' => '页面列表', 'url' => '/page/quarterly-declarations']
+                ['text' => '页面列表', 'url' => '/page/index']
             )
             ->body(self::listAction($request));
     }
@@ -40,8 +41,9 @@ class PageController extends Controller
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             $actions->disableView();
-
-        });
+            $actions->disableDelete();
+            $actions->add(new Delete());
+    });
         return $grid->render();
     }
 
