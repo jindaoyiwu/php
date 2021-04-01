@@ -37,12 +37,12 @@
                 <i class="home-icon1"></i>
                 <span>首页</span></a>
         </li>
-        <li class="col-xs-3">
+        <li class="col-xs-3" onclick="selection()">
             <a href="{{env('APP_URL')}}/front/woChuang/navigation">
                 <i class="category-icon1"></i>
                 <span>分类</span></a>
         </li>
-        <li class="col-xs-3">
+        <li class="col-xs-3" onclick="selection()">
             <a href="{{env('APP_URL')}}/front/woChuang/news">
                 <i class="car-icon1"></i>
                 <span>动态</span></a>
@@ -54,5 +54,12 @@
 <script>
     function selection(){
         this.setAttribute("class", "col-xs-3 active-footer");
+        const p = this.parentNode.children; //获取父级的所有子节点
+        for(let i = 0; i < p.length; i++){  //循环
+            if(p[i].nodeType == 1 && p[i] != this){  //如果该节点是元素节点与不是这个节点本身
+                console.log(p[i]);
+                p[i].setAttribute("class", "col-xs-3");
+            }
+        }
     }
 </script>
