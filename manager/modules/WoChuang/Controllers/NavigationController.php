@@ -54,7 +54,7 @@ class NavigationController extends Controller
             $success = new MessageBag([
                 'title' => '保存成功'
             ]);
-            return redirect('/admin/woChuang/index')->with(compact('success'));
+            return redirect('/admin/woChuang/navigation')->with(compact('success'));
         } else {
             $error = new MessageBag([
                 'title' => '保存失败'

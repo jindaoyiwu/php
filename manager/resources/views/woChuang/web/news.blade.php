@@ -1,12 +1,11 @@
 @extends('woChuang.web.layout')
 @section('content')
-    <link href="http://manager.com/css/woChuang/bootstrap.css?v=1513240666" rel="stylesheet">
-    <link href="http://manager.com/css/woChuang/animate.css?v=1516675612" rel="stylesheet">
-    <link href="http://manager.com/css/woChuang/revision-common.css?v=1584012305" rel="stylesheet">
-    <link href="http://manager.com/css/woChuang/product.css?v=1575549369" rel="stylesheet">
-    <link href="http://manager.com/css/woChuang/article.css?v=1533696630" rel="stylesheet">
-    <link href="http://manager.com/css/woChuang/layer.css?v=1574226129" rel="stylesheet">
-    <link href="http://manager.com/css/woChuang/swiper-3.4.2.min.css?v=1513240666" rel="stylesheet">
+    <link href="{{env('APP_URL')}}/css/woChuang/bootstrap.css?v=1513240666" rel="stylesheet">
+    <link href="{{env('APP_URL')}}/css/woChuang/animate.css?v=1516675612" rel="stylesheet">
+    <link href="{{env('APP_URL')}}/css/woChuang/revision-common.css?v=1584012305" rel="stylesheet">
+    <link href="{{env('APP_URL')}}/css/woChuang/product.css?v=1575549369" rel="stylesheet">
+    <link href="{{env('APP_URL')}}/css/woChuang/article.css?v=1533696630" rel="stylesheet">
+    <link href="{{env('APP_URL')}}/css/woChuang/swiper-3.4.2.min.css?v=1513240666" rel="stylesheet">
     <!--文章列表-->
     <div class="article">
 
@@ -44,9 +43,9 @@
             </div>
         </div>
     </div>
-    <script src="http://manager.com/js/woChuang/jquery-1.11.3.min.js?v=1513240666"></script>
-    <script src="http://manager.com/js/woChuang/bootstrap.js?v=1513240666"></script>
-    <script src="http://manager.com/js/woChuang/popup.js?v=1530688133"></script>
-    <script src="http://manager.com/js/woChuang/resize.js?v=1574226129"></script>
-    <script src="http://manager.com/js/woChuang/swiper-3.4.2.jquery.min.js?v=1513240666"></script>
+    <script src="{{env('APP_URL')}}/js/woChuang/jquery-1.11.3.min.js?v=1513240666"></script>
+    <script src="{{env('APP_URL')}}/js/woChuang/bootstrap.js?v=1513240666"></script>
+    <script src="{{env('APP_URL')}}/js/woChuang/popup.js?v=1530688133"></script>
+    <script src="{{env('APP_URL')}}/js/woChuang/resize.js?v=1574226129"></script>
+    <script src="{{env('APP_URL')}}/js/woChuang/swiper-3.4.2.jquery.min.js?v=1513240666"></script>
 @stop

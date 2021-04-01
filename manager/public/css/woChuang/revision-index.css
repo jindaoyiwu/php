@@ -117,7 +117,7 @@ body{
 	left: 50%;
     width: 130px;
     height: 40px;
-    background: url(img/hot-title-bg.png) no-repeat;
+    background: url(../../upload/hot-title-bg.png) no-repeat;
     background-size: 130px 40px;
     margin-left: -65px;
 }
@@ -292,7 +292,7 @@ body{
 }
 
 .service-advantage .government-title h3{
-	background: url(img/service-advantage-title-bg.png) no-repeat;
+	background: url(../../upload/service-advantage-title-bg.png) no-repeat;
 	background-size: 130px 40px;
 }
 

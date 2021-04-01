@@ -28,7 +28,7 @@ Route::group([
     $router->get('/page/{name}', 'FrontPageController@index');
     $router->get('/news', 'FrontNewsController@index');
     $router->post('/index/save', 'IndexController@save');
-    $router->get('/navigation', 'NavigationController@index');
+    $router->get('/navigation', 'FrontNavigationController@index');
     $router->post('/navigation/save', 'NavigationController@save');
     $router->post('/news/save', 'NewsController@save');
 });

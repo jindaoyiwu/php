@@ -22,7 +22,7 @@
 <div class="public-head-one clear-fix">
     <div class="public-head-logo">
         <a href="https://m.juejinqifu.com/">
-            <img src="http://manager.com/upload/head-logo.png" alt="掘金企服">
+            <img src="{{env('APP_URL')}}/upload/head-logo.png" alt="掘金企服">
         </a>
     </div>
     <div class="public-head-phone">
@@ -32,18 +32,18 @@
 @yield('content')
 <div class="footer">
     <ul class="row" id="hFive" style="padding-bottom: 34px; display: block;">
-        <li class="col-xs-3 active-footer">
-            <a href="https://m.juejinqifu.com/">
+        <li class="col-xs-3 active-footer" onclick="selection()">
+            <a href="{{env('APP_URL')}}/front/woChuang/index">
                 <i class="home-icon1"></i>
                 <span>首页</span></a>
         </li>
         <li class="col-xs-3">
-            <a href="https://m.juejinqifu.com/list/128.html">
+            <a href="{{env('APP_URL')}}/front/woChuang/navigation">
                 <i class="category-icon1"></i>
                 <span>分类</span></a>
         </li>
         <li class="col-xs-3">
-            <a href="https://m.juejinqifu.com/information/list.html">
+            <a href="{{env('APP_URL')}}/front/woChuang/news">
                 <i class="car-icon1"></i>
                 <span>动态</span></a>
         </li>
@@ -51,3 +51,8 @@
 </div>
 </body>
 </html>
+<script>
+    function selection(){
+        this.setAttribute("class", "col-xs-3 active-footer");
+    }
+</script>

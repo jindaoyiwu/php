@@ -91,7 +91,7 @@ ul li{
     width: 21px;
     height: 21px;
     display: inline-block;
-    background: url("img/header-right-icon.png")no-repeat;
+    background: url("../../upload/header-right-icon.png")no-repeat;
     background-size: 100% 100%;
     float: left;
     margin-right: 10px;
@@ -100,7 +100,7 @@ ul li{
     width: 21px;
     height: 21px;
     display: inline-block;
-    background: url("img/switch-mode-imgmall.png")no-repeat;
+    background: url("../../upload/switch-mode-imgmall.png")no-repeat;
     background-size: 100% 100%;
     float: left;
     margin-right: 10px;
@@ -109,7 +109,7 @@ ul li{
     width: 20px;
     height: 21px;
     display: inline-block;
-    background: url("img/switch-mode-icon.png")no-repeat;
+    background: url("../../upload/switch-mode-icon.png")no-repeat;
     background-size: 100% 100%;
     position: absolute;
     left: 17px;
@@ -209,7 +209,7 @@ ul li{
     display: block;
     width: 22px;
     height: 22px;
-    background: url("img/success-icon_03.jpg?v=2017-05-31");
+    background: url("../../upload/success-icon_03.jpg?v=2017-05-31");
     background-size: 100% 100%;
     margin: 10px auto;
     margin-top: 18px;
@@ -237,7 +237,7 @@ ul li{
     width: 100%;
     height: 255px;
     display: block;
-    background: url("img/prompt-alpay_02.png?v=2017-05-31");
+    background: url("../../upload/prompt-alpay_02.png?v=2017-05-31");
     background-size: 100% 100%;
     position: fixed;
     top: 0;
@@ -294,25 +294,25 @@ ul li{
 .star ul li{
     width: 14px;
     height: 14px;
-    background: url("img/star-icon5_09.jpg?v=20171019");
+    background: url("../../upload/star-icon5_09.jpg?v=20171019");
     background-size: 100% 100%;
     float: left;
     margin-left: 3px;
 }
 .star ul li.evaluate-score-star1{
-    background: url("img/star-icon1_07.jpg?v=20171019");
+    background: url("../../upload/star-icon1_07.jpg?v=20171019");
     background-size: 100% 100%;
 }
 .star ul li.evaluate-score-star2{
-    background: url("img/star-icon2.jpg?v=20171019");
+    background: url("../../upload/star-icon2.jpg?v=20171019");
     background-size: 100% 100%;
 }
 .star ul li.evaluate-score-star4{
-    background: url("img/star-icon4.jpg?v=20171019");
+    background: url("../../upload/star-icon4.jpg?v=20171019");
     background-size: 100% 100%;
 }
 .star ul li.evaluate-score-star5{
-    background: url("img/star-icon5.jpg?v=20171019");
+    background: url("../../upload/star-icon5.jpg?v=20171019");
     background-size: 100% 100%;
 }
 /*发票公用样式*/
@@ -405,7 +405,7 @@ ul li{
     cursor: pointer;
 }
 .online span {
-    background-image: url(img/call-icon817_33.png?v=20170817);
+    background-image: url(../../upload/call-icon817_33.png?v=20170817);
 }
 .telephone{
     width: 48px;
@@ -416,7 +416,7 @@ ul li{
     background: rgba(66,182,231,0.8);
 }
 .telephone span {
-    background-image: url(img/call-icon2-817_35.png?v=20170817);
+    background-image: url(../../upload/call-icon2-817_35.png?v=20170817);
 }
 .back-top{
     width: 46px;
@@ -468,42 +468,38 @@ ul li{
     margin-top: 4px;
 }
 .footer ul li i.home-icon1{
-    background-image: url("img/footer2_10 (2).png?v=2017-05-31");
+    background-image: url("../../upload/footer2_10 (2).png?v=2017-05-31");
     background-size: 100% 100%;
 }
 .footer ul li i.category-icon1{
-    background-image: url("img/footer_05.png?v=2017-05-31");
+    background-image: url("../../upload/footer_05.png?v=2017-05-31");
     background-size: 100% 100%;
 }
 .footer ul li i.car-icon1{
-    background-image: url("img/dongtai.png");
+    background-image: url("../../upload/dongtai.png");
     background-size: 100% 100%;
 }
 .footer ul li i.my-icon1{
-    background-image: url("img/footer_10.png?v=2017-05-31");
+    background-image: url("../../upload/footer_10.png?v=2017-05-31");
     background-size: 100% 100%;
 }
 .footer ul li.active-footer span{
     color: #fff;
 }
 .footer ul li.active-footer i.home-icon1{
-    background-image: url("img/footer_03.png?v=2017-05-31");
+    background-image: url("../../upload/footer_03.png?v=2017-05-31");
     background-size: 100% 100%;
 }
 .footer ul li.active-footer i.category-icon1{
-    background-image: url("img/footer2_10 (3).png?v=2017-05-31");
+    background-image: url("../../upload/footer2_10 (3).png?v=2017-05-31");
     background-size: 100% 100%;
 }
 .footer ul li.active-footer i.car-icon1{
-    background-image: url("img/dongtai-active.png");
-    background-size: 100% 100%;
-}
-.footer ul li.active-footer i.dynamic-icon1{
-    background-image: url("img/chaxun-active.png");
+    background-image: url("../../upload/dongtai-active.png");
     background-size: 100% 100%;
 }
 .footer ul li.active-footer i.my-icon1{
-    background-image: url("img/footer2_10 (1).png?v=2017-05-31");
+    background-image: url("../../upload/footer2_10 (1).png?v=2017-05-31");
     background-size: 100% 100%;
 }
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
@@ -578,7 +574,7 @@ ul li{
 	display: block;
 	width: 16px;
 	height: 20px;
-	background: url('img/header-my-oeder.png') no-repeat;
+	background: url('../../upload/header-my-oeder.png') no-repeat;
 	background-size: 16px 20px;
 }
 .public-head-order a i{
@@ -622,7 +618,7 @@ ul li{
 	display: block;
 	width: 20px;
 	height: 20px;
-	background: url('img/public-head-search.png') no-repeat;
+	background: url('../../upload/public-head-search.png') no-repeat;
 	background-size: 20px 20px;
 	margin-right: 11px;
 }
@@ -641,7 +637,7 @@ ul li{
 	display: block;
 	width: 22px;
 	height: 22px;
-	background: url('img/public-head-phone-icon.gif') no-repeat;
+	background: url('../../upload/public-head-phone-icon.gif') no-repeat;
 	background-size: 22px 22px;
 }
 
@@ -702,7 +698,7 @@ ul li{
 	left: 20px;
     width: 20px;
     height: 20px;
-	background: url('img/public-head-search.png') no-repeat;
+	background: url('../../upload/public-head-search.png') no-repeat;
     background-size: 20px;
 }
 
@@ -814,14 +810,14 @@ ul li{
     height: 30px;
     display: inline-block;
     z-index: 666;
-    background: url("img/return-previous.png")no-repeat;
+    background: url("../../upload/return-previous.png")no-repeat;
     background-size: 100% 100%;
 }
 #back-homepage a{
 	display: block;
 	width: 48px;
 	height: 48px;
-	background: url(img/back-homepage-icon.png);
+	background: url(../../upload/back-homepage-icon.png);
 	background-repeat: no-repeat;
 	background-size: 48px 48px;
 }
