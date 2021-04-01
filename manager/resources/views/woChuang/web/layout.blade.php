@@ -19,6 +19,35 @@
     <meta name="keywords" content="北京公司注册,北京注册公司,北京代理记账,北京建筑资质,北京商标注册,互联网资质,掘金企服">
 </head>
 <body>
+<div class="public-head-one clear-fix">
+    <div class="public-head-logo">
+        <a href="https://m.juejinqifu.com/">
+            <img src="http://manager.com/upload/head-logo.png" alt="掘金企服">
+        </a>
+    </div>
+    <div class="public-head-phone">
+        <a href="tel:400-6060-999">400-6060-999</a>
+    </div>
+</div>
 @yield('content')
+<div class="footer">
+    <ul class="row" id="hFive" style="padding-bottom: 34px; display: block;">
+        <li class="col-xs-3 active-footer">
+            <a href="https://m.juejinqifu.com/">
+                <i class="home-icon1"></i>
+                <span>首页</span></a>
+        </li>
+        <li class="col-xs-3">
+            <a href="https://m.juejinqifu.com/list/128.html">
+                <i class="category-icon1"></i>
+                <span>分类</span></a>
+        </li>
+        <li class="col-xs-3">
+            <a href="https://m.juejinqifu.com/information/list.html">
+                <i class="car-icon1"></i>
+                <span>动态</span></a>
+        </li>
+    </ul>
+</div>
 </body>
 </html>

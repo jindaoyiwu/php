@@ -8,16 +8,7 @@
     <link href="http://manager.com/css/woChuang/revision-index.css" rel="stylesheet">
     <script src="http://manager.com/js/woChuang/getjs_bdt.js"></script>
     <script src="http://manager.com/js/woChuang/MsQpfQg1.js" type="text/javascript"></script>
-<div class="public-head-one clear-fix">
-    <div class="public-head-logo">
-        <a href="https://m.juejinqifu.com/">
-            <img src="http://manager.com/upload/head-logo.png" alt="掘金企服">
-        </a>
-    </div>
-    <div class="public-head-phone">
-        <a href="tel:400-6060-999">400-6060-999</a>
-    </div>
-</div>
+
 
 <div class="banner-new swiper-container swiper-container-horizontal swiper-container-android">
     <ul class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
@@ -29,26 +20,6 @@
         <li class="swiper-slide swiper-slide-next" style="width: 400px;">
             <a href="https://m.juejinqifu.com/redirect-statistics/go.html?key=154&amp;uri=https%3A%2F%2Fm.juejinqifu.com%2Ftopic%2Fflexible-employment.html">
                 <img src="http://manager.com/upload/20200320-1584699054.png" alt="灵活用工">
-            </a>
-        </li>
-        <li class="swiper-slide" style="width: 400px;">
-            <a href="https://m.juejinqifu.com/redirect-statistics/go.html?key=163&amp;uri=https%3A%2F%2Fm.juejinqifu.com%2Ftopic%2Fjwzz.html">
-                <img src="http://manager.com/upload/20200430-1588228405.jpg" alt="建筑资质">
-            </a>
-        </li>
-        <li class="swiper-slide" style="width: 400px;">
-            <a href="https://m.juejinqifu.com/redirect-statistics/go.html?key=169&amp;uri=https%3A%2F%2Fm.juejinqifu.com%2Ftopic%2Fcompany_transfer.html">
-                <img src="http://manager.com/upload/20200520-1589941952.png" alt="公司收转">
-            </a>
-        </li>
-        <li class="swiper-slide" style="width: 400px;">
-            <a href="https://m.juejinqifu.com/redirect-statistics/go.html?key=160&amp;uri=https%3A%2F%2Fm.juejinqifu.com%2Fproduct-laborrelation.html">
-                <img src="http://manager.com/upload/20200507-1588845869.jpg" alt="法律服务">
-            </a>
-        </li>
-        <li class="swiper-slide" style="width: 400px;">
-            <a href="https://m.juejinqifu.com/redirect-statistics/go.html?key=165&amp;uri=https%3A%2F%2Fm.juejinqifu.com%2Fproduct-transfer.html">
-                <img src="http://manager.com/upload/20200507-1588845578.png" alt="商标转让">
             </a>
         </li>
     </ul>
@@ -105,9 +76,7 @@
     <ul class="clear-fix">
         <li>
             <a href="https://m.juejinqifu.com/product-neizigongsi.html">
-                <span><img
-                        src="http://manager.com/upload/201708189148259fa8c1ed0b70e2ba4c88cb1b25.jpg"
-                        alt="公司注册"></span>
+                <span><img src="http://manager.com/upload/201708189148259fa8c1ed0b70e2ba4c88cb1b25.jpg" alt="公司注册"></span>
                 <p>公司注册</p>
             </a>
 
@@ -277,31 +246,6 @@
     </div>
 </div>
 
-<div class="footer">
-    <ul class="row" id="hFive" style="padding-bottom: 34px; display: block;">
-        <li class="col-xs-3 active-footer">
-            <a href="https://m.juejinqifu.com/">
-                <i class="home-icon1"></i>
-                <span>首页</span></a>
-        </li>
-        <li class="col-xs-3">
-            <a href="https://m.juejinqifu.com/list/128.html">
-                <i class="category-icon1"></i>
-                <span>分类</span></a>
-        </li>
-        <li class="col-xs-3">
-            <a href="https://m.juejinqifu.com/information/list.html">
-                <i class="car-icon1"></i>
-                <span>动态</span></a>
-        </li>
-        <li class="col-xs-3">
-            <a href="https://m.juejinqifu.com/user/home.html">
-                <i class="my-icon1"></i>
-                <span>我的</span></a>
-        </li>
-    </ul>
-</div>
-
 <script src="http://manager.com/js/woChuang/375060.js" defer="" async=""></script>
 <script src="http://manager.com/js/woChuang/push.js"></script>
 <script src="http://manager.com/js/woChuang/hm.js"></script>
@@ -311,205 +255,9 @@
 <script src="http://manager.com/js/woChuang/bootstrap.js"></script>
 <script src="http://manager.com/js/woChuang/popup.js"></script>
 <script src="http://manager.com/js/woChuang/swiper-3.4.2.jquery.min.js"></script>
-<script>jQuery(function ($) {
-        $(function () {
-            $('.public-head-two-search p').on('click', function () {
-                $('.search-popup').show();
-                $('.live-poster').hide();
-                $('.search-popup .search-box').find('input').focus().val('');
-            });
-            $('.close-search').click(function () {
-                $(this).parents('.search-popup').hide();
-            });
-        });
-        $(function () {
-            var ua = navigator.userAgent.toLowerCase();
-            if (ua.match(/MicroMessenger/i) == "micromessenger") {
-                wx.miniProgram.getEnv((res) => {
-                    if (res.miniprogram) {
-                        $("#chat-click").hide();
-                    } else {
-                        // alert("不在小程序里");
-                    }
-                })
-            } else {
-            }
-        });
-        var url = window.location.href;
-        var chars = decodeURIComponent(url).split('?')[1];
-        if (chars === 'source=bdapp') {
-            $('.public-head-phone').hide()
-        }
-        $(function () {
-            $(window).scroll(function () {
-                var don = $(window).scrollTop();
-                if (don > 102) {
-                    $('.back-top').show();
-                } else {
-                    $('.back-top').hide();
-                }
-            });
-            $('.back-top').click(function () {
-                $('html,body').animate({scrollTop: 0}, 400);
-            });
-
-        });
-        $(document).ready(function () {
-            $.fn.extend({
-                AutoSize: function () {
-                    var element = $(this);
-                    auto();
-
-                    function auto() {
-                        var height = $(window).height();
-                        $(element).height(height);
-                    }
-
-                    $(window).resize(auto);
-                }
-            });
-            //滑动
-            var isdrag = false;
-            var NowTop, disY;
-            var oSlide = document.getElementById("slide-btn");
-            var sHeight = window.screen.height;//屏幕的高
-            oSlide.addEventListener('touchstart', thismousedown); //开始移动
-            oSlide.addEventListener('touchend', thismouseup); //移动结束
-            oSlide.addEventListener('touchmove', thismousemove); //移动中
-            function thismousedown(e) {
-                isdrag = true;
-                //e.preventDefault();
-                $("body").AutoSize();
-                var mTop = oSlide.offsetTop;
-                NowTop = parseInt(mTop + 0);
-                disY = e.touches[0].clientY;
-                return false;
-            }
-
-            function thismousemove(e) {
-                if (isdrag) {
-                    e.preventDefault();
-                    oSlide.style.top = NowTop + e.touches[0].clientY - disY + 'px';
-                    if (parseInt(oSlide.style.top) <= 1) {
-                        oSlide.style.top = '1px'
-                    } else if (parseInt(oSlide.style.top) >= (sHeight - 172)) {
-                        oSlide.style.top = (sHeight - 172) + 'px'
-                    }
-                    return false;
-                }
-            }
-
-            function thismouseup() {
-                isdrag = false;
-            }
-        })
-
-        $(function () {
-            var ua = navigator.userAgent.toLowerCase();
-            if (ua.match(/MicroMessenger/i) == "micromessenger") {
-                //ios的ua中无miniProgram，但都有MicroMessenger（表示是微信浏览器）
-                wx.miniProgram.getEnv((res) => {
-                    if (res.miniprogram) {
-                        // alert("在小程序里");
-                        $("#hFive").hide();
-                        $("#wechatBar").show();
-                    } else {
-                        // alert("不在小程序里");
-                        $("#hFive").show();
-                        $("#wechatBar").hide();
-                    }
-                })
-            } else {
-                // alert('不在微信里');
-                $("#hFive").show();
-                $("#wechatBar").hide();
-            }
-        });
-        $(function () {
-            var shareTitle = $(document).attr("title");
-            var obj = {
-                'shareTitle': shareTitle,
-            };
-            console.log(obj, "obj");
-            wx.miniProgram.postMessage({
-                data: obj
-            })
-        });
-
-        var url = window.location.href;
-        var chars = decodeURIComponent(url).split('?')[1];
-        if (chars === 'source=bdapp') {
-            $('.bottom-logo-hidde').hide();
-            $('.service-advantage').addClass('service-advantage-padding');
-        }
-        $(function () {
-            //头部切换
-            isHeaderShow();
-            $(window).scroll(function () {
-                isHeaderShow();
-            });
-
-            function isHeaderShow() {
-                var winTop = $(window).scrollTop();
-                if (winTop > 0) {
-                    $('.public-head-two').show();
-                } else {
-                    $('.public-head-two').hide();
-                }
-            }
-
-            //banner
-            var swiper = new Swiper('.swiper-container', {
-                pagination: '.swiper-pagination',
-                autoplay: 2500,
-                autoplayDisableOnInteraction: false,
-                paginationClickable: true
-            });
-
-        });
-        $(function () {
-            var ua = navigator.userAgent.toLowerCase();
-            if (ua.match(/MicroMessenger/i) == "micromessenger") {
-                wx.miniProgram.getEnv((res) => {
-                    if (res.miniprogram) {
-                        $(".live-m").hide();
-                    } else {
-                        $(".live-m").show();
-                    }
-                })
-            } else {
-                $(".live-m").show();
-            }
-        });
-        var videoObject = {
-            container: '.video',//“#”代表容器的ID，“.”或“”代表容器的class
-            variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
-            loaded: 'loadedHandler',
-            autoplay: false,//自动播放
-            live: true,
-            seek: 0,
-            mobileCkControls: false,
-            // poster: 'http://juejinqifu-images.oss-cn-qingdao.aliyuncs.com/live-background.png',
-            video: 'https://play-video.juejinqifu.com/live/av0.m3u8'//视频地址
-        };
-        $(".live-poster").click(function () {
-            player.playOrPause()
-            $(this).children().remove("img");
-        })
-    });</script>
-<script type="text/javascript" src="http://manager.com/js/woChuang/211910.js" async=""
-        defer=""></script>
+<script type="text/javascript" src="http://manager.com/js/woChuang/211910.js" async="" defer=""></script>
 <meta name="shenma-site-verification" content="64e4b74e271de23df134f521f5cdb333_1557037715">
 
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?6c41c9f53593d35b2bb1113730d05d9e";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
 
 <script>
     (function () {
@@ -522,12 +270,6 @@
         }
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(bp, s);
-    })();
-</script>
-<script>
-    (function () {
-        var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?fc73f49d67c80b3be53e8da8e33373c2" : "https://jspassport.ssl.qhimg.com/11.0.1.js?fc73f49d67c80b3be53e8da8e33373c2";
-        document.write('<script src="' + src + '" id="sozz"><\/script>');
     })();
 </script>
 <script src="http://manager.com/js/woChuang/11.0.1.js" id="sozz"></script>

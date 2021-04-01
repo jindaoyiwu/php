@@ -15,6 +15,7 @@ class FrontNewsController extends Controller
      * 列表
      * @param Request $request
      * @return Factory|View
+     * @throws \Exception
      */
     public function index(Request $request)
     {
@@ -28,17 +29,18 @@ class FrontNewsController extends Controller
             'Host' => 'm.juejinqifu.com'
         ];
         $params = [
-            'query' => ['offset' => '0', 'limit' => 20, 'type' => 3],
+            'query' => ['offset' => '0', 'limit' => 30, 'type' => 3],
             'headers' => $headers,
         ];
         try {
             $response = $client->request('GET', 'information/ajax-data.html', $params);
-            $responseData = $response->getBody()->getContents();      // 响应体
+            $responseData = $response->getBody()->getContents();
+            $data = json_decode($responseData, true);
         } catch (GuzzleException $e) {
             throw new \Exception(sprintf('请求异常：%s', $e->getMessage()));
         }
 
-        return View('woChuang.web.news', compact('responseData'));
+        return View('woChuang.web.news', compact('data'));
     }
 
 

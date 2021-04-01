@@ -434,7 +434,6 @@ ul li{
     display: block;
     margin: 0 auto;
     margin-top: 12px;
-    background: url("img/back-top-icon_33.png");
     background-size: 100% 100%;
 }
 .footer{
@@ -449,9 +448,13 @@ ul li{
 .footer ul{
     display: none;
 }
+.footer ul li{
+    display: block;
+    width: 33%;
+}
 .footer ul li i{
     display: block;
-    width: 22px;
+    width: 20px;
     height: 22px;
     margin: 0 auto;
     margin-top: 6px;
@@ -479,9 +482,6 @@ ul li{
 .footer ul li i.my-icon1{
     background-image: url("img/footer_10.png?v=2017-05-31");
     background-size: 100% 100%;
-}
-.footer #wechatBar .col-xs-3{
-    width: 20%;
 }
 .footer ul li.active-footer span{
     color: #fff;
